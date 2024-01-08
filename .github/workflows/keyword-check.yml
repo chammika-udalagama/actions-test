@@ -6,16 +6,15 @@ jobs:
   check-keywords:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Run a script
-      run: |
-        echo "Log Entry: $(date)" >> my-log.log 
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
-        git add my-log.log
-        git commit -m "Update log"
-        git push
-        #./git-actions
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-        
+      - name: Run a script
+        run: |
+          echo "Log Entry: $(date)" >> my-log.log
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add my-log.log
+          git commit -m "Update log"
+          git push
+          #./git-actions
