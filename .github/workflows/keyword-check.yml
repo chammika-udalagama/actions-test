@@ -15,9 +15,10 @@ jobs:
       - name: Run a script
         run: |
           echo "Log Entry: $(date)" >> my-log.log
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config user.email "chammika@nus.edu.sg"
+          git config user.name "Automated Git Actions for SP2273"
           git add my-log.log
-          git commit -m "Update log"
+          timestamp=$(date -u)
+          git commit -m "Update log: ${timestamp}"
           git push
           #./git-actions
