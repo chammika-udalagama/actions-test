@@ -1,0 +1,6 @@
+if git log -1 --pretty=%B | grep -i -e 'commit'
+then
+echo "HAHAHA" >> log
+else
+echo "NOOO" >> log
+fi
