@@ -8,8 +8,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
     - name: Run a script
       run: |
-          ./git-actions
+        echo "Log Entry: $(date)" >> my-log.log 
+        #./git-actions
         
