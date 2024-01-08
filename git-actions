@@ -1,4 +1,4 @@
-if git log -1 --pretty=%B | grep -i -e 'commit'
+if git log -1 --pretty=%B | grep -i -e 'cham'
 then
 echo "HAHAHA" >> log
 else
