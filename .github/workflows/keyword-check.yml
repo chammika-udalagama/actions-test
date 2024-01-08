@@ -2,6 +2,9 @@ name: Keyword Check
 
 on: [push, pull_request]
 
+permissions:
+  contents: write
+
 jobs:
   check-keywords:
     runs-on: ubuntu-latest
