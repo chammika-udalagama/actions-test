@@ -9,9 +9,6 @@ jobs:
   check-keywords:
     runs-on: ubuntu-latest
     steps:
-      # - name: Get secret api key
-      #   env:
-      #     OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -24,6 +21,8 @@ jobs:
         run: pip install requests
         
       - name: Run the python script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python runner.py  
 
       - name: Run a script
