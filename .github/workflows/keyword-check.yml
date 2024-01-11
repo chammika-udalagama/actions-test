@@ -9,6 +9,9 @@ jobs:
   check-keywords:
     runs-on: ubuntu-latest
     steps:
+      - name: Get secret api key
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       - name: Checkout code
         uses: actions/checkout@v4
 
@@ -20,15 +23,15 @@ jobs:
       - name: Install necessary Python packages
         run: pip install requests
         
-      # - name: Run the python script
+      - name: Run the python script
+        run: python runner.py  
 
       - name: Run a script
         run: |
           echo "Log Entry: $(date)" >> my-log.log
           git config user.email "chammika@nus.edu.sg"
           git config user.name "ChatGPT for SP2273"
-          git add my-log.log
+          git add -A
           timestamp=$(date -u)
-          git commit -m "Update log: ${timestamp}"
+          git commit -m "CHATGPT_FEEDBACK file created @ ${timestamp}"
           git push
-          #./git-actions
